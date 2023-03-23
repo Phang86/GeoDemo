@@ -12,8 +12,8 @@ ext {
 
     //编译JDK配置
     compileOptions = [
-            sourceCompatibility: JavaVersion.VERSION_1_8,
-            targetCompatibility: JavaVersion.VERSION_1_8,
+            sourceCompatibility: JavaVersion.VERSION_11,
+            targetCompatibility: JavaVersion.VERSION_11,
     ]
 
     //依赖配置
@@ -31,7 +31,8 @@ ext {
                     'androidx.test.espresso:espresso-core:3.4.0'
             ],
             other : [
-                    ':basic'
+                    ':basic',
+                    ':annotation',
             ]
     ]
 }

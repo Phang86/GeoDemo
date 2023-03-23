@@ -4,8 +4,6 @@ plugins {
 
 
 android {
-
-
     sourceSets {
         main{
             jniLibs.srcDirs = ['libs']
@@ -65,6 +63,7 @@ dependencies {
         implementation project(path: ':login')
         implementation project(path: ':personal')
     }
+    annotationProcessor project(path: ':annotation_compiler')
 
     //3D地图
 //    implementation 'com.amap.api:3dmap:latest.integration'

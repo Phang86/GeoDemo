@@ -51,6 +51,9 @@ import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
+import com.example.annotation.BindPath;
+import com.example.basic.BaseActivity;
+import com.example.basic.router.ARouter;
 import com.example.myapplication.utils.UuidUtil;
 import com.example.myapplication.utils.WindmillView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -61,7 +64,8 @@ import java.util.List;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class MainActivity extends AppCompatActivity implements AMapLocationListener,LocationSource,
+@BindPath("main/MainActivity")
+public class MainActivity extends BaseActivity implements AMapLocationListener,LocationSource,
         PoiSearch.OnPoiSearchListener, AMap.OnMapClickListener,
         AMap.OnMapLongClickListener, GeocodeSearch.OnGeocodeSearchListener ,
         EditText.OnKeyListener, AMap.OnMarkerClickListener ,
@@ -107,12 +111,14 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        ARouter.getInstance().jumpActivity("login/LoginActivity");
         //初始化定位
         initLocation();
         //初始化地圖
         initMap(savedInstanceState);
         //檢查版本
         checkingAndroidVersion();
+
     }
 
     private void initMap(Bundle savedInstanceState) {
