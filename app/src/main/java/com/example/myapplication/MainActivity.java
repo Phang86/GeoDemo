@@ -51,6 +51,7 @@ import com.amap.api.services.geocoder.RegeocodeQuery;
 import com.amap.api.services.geocoder.RegeocodeResult;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
+import com.example.myapplication.utils.UuidUtil;
 import com.example.myapplication.utils.WindmillView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -332,6 +333,8 @@ public class MainActivity extends AppCompatActivity implements AMapLocationListe
      * @param view
      */
     public void queryPOI(View view) {
+        //測試uuid
+        UuidUtil.getMyUUID();
         //构造query对象
         query = new PoiSearch.Query("购物", "", cityCode);
         // 设置每页最多返回多少条poiitem

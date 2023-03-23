@@ -16,3 +16,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "My Application"
 include ':app'
+include ':login'
+include ':personal'
+include ':basic'

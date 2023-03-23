@@ -5,6 +5,8 @@ plugins {
 
 }
 
+apply from: "config.gradle"
+
 
 task assemble{
 
